@@ -1,0 +1,26 @@
+[profile.default]
+src = "src"
+out = "out"
+libs = ["lib"]
+remappings = [
+    "@openzeppelin/=lib/openzeppelin-contracts/",
+    "@uniswap/=lib/uniswap/"
+]
+solc_version = "0.8.30"
+optimizer = true
+optimizer_runs = 200
+verbosity = 3
+
+[profile.ci]
+fuzz_runs = 1000
+verbosity = 4
+
+[etherscan]
+mainnet = { key = "${ETHERSCAN_API_KEY}" }
+goerli = { key = "${ETHERSCAN_API_KEY}" }
+
+baseSeplia = { key = "${ETHERSCAN_API_KEY}", url = "https://api-sepolia.basescan.org/api" }
+
+[rpc_endpoints]
+mainnet = "${RPC_MAINNET}"
+goerli = "${RPC_GOERLI}"
