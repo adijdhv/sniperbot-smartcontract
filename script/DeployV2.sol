@@ -2,7 +2,7 @@
 pragma solidity ^0.8.19;
 
 import "forge-std/Script.sol";
-import "../src/VirtualsSniper.sol";
+import "../src/VirtualsSniperV2.sol";
 
 contract DeployVirtualsSniper is Script {
     function run() external {
@@ -26,6 +26,6 @@ contract DeployVirtualsSniper is Script {
         console.log("VirtualsSniper deployed at:", address(sniper));
         console.log("Owner:", sniper.owner());
         console.log("Router:", address(sniper.router()));
-        console.log("Virtual Token Address:", sniper.WETH());
+        console.log("Virtual Token Address:", sniper.virtualToken());
     }
 }
